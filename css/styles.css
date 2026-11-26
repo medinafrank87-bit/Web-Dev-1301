@@ -1,0 +1,261 @@
+/*
+Author: Frank Medina
+Date: October 26, 2026
+File Name: styles.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, h2, ul, figure, figcaption, aside, section, form, dl, dd {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for body and images */
+body {
+    background-color: #f2f2f2;
+    color: #1a1a1a;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+h2 {
+    margin: 1em 0 0.5em;
+}
+
+/* Keyboard focus for every link */
+a:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+/* Style rules for mobile viewport */
+
+/* Header and navigation */
+header {
+    background-color: #14161a;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 1em 0.5em;
+}
+
+header h1 {
+    font-size: 1.75em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75em 1em;
+}
+
+nav a:hover {
+    background-color: #c1121f;
+}
+
+nav a.current {
+    border-bottom: 3px solid #c1121f;
+}
+
+/* Main content */
+main {
+    padding: 1em;
+}
+
+.garage {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.build-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.build-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.build-photo:hover img {
+    opacity: 1;
+}
+
+figcaption {
+    padding: 0.75em;
+    font-size: 0.9em;
+}
+
+.spec-sidebar {
+    background-color: #14161a;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.spec-sidebar h2 {
+    margin-top: 0;
+}
+
+.spec-sidebar ul {
+    list-style-type: none;
+}
+
+.spec-sidebar li {
+    padding: 0.25em 0;
+}
+
+/* Parts and specs page */
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+dd {
+    margin-bottom: 0.5em;
+}
+
+/* Table wrapper so wide tables scroll instead of breaking the page on phones */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* Table layout and borders */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+caption {
+    font-weight: bold;
+    padding: 0.5em;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #bbb;
+    padding: 0.6em;
+    text-align: left;
+}
+
+/* Header row */
+thead th {
+    background-color: #14161a;
+    color: #fff;
+}
+
+/* Zebra striping for the body rows */
+tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+/* Contact form */
+label {
+    display: block;
+    margin-top: 1em;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 30em;
+    padding: 0.5em;
+    font-family: inherit;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.6em 1.5em;
+    background-color: #c1121f;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8f0d17;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #14161a;
+    color: #fff;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 600px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 960px) {
+
+    main {
+        padding: 1.5em 3%;
+    }
+
+    .garage {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .build-list {
+        flex: 3;
+    }
+
+    .spec-sidebar {
+        flex: 1;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
